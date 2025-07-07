@@ -1,0 +1,42 @@
+# Виртуальное окружение
+venv/
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# IDE / редакторы
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Логи и временные файлы
+*.log
+*.tmp
+*.bak
+*.pid
+*.seed
+*.prof
+
+# Файлы среды
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Данные и результаты
+data/__pycache__/
+results/
+output/
+
+# Библиотеки и зависимости
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+develop-eggs/
