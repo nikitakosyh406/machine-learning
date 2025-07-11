@@ -1,6 +1,9 @@
-FROM python:3.12-slim
+FROM python:3.9-slim
+
 WORKDIR /app
+
 COPY requirements.txt .
+
 RUN apt-get update --fix-missing && \
     apt-get install -y --no-install-recommends \
         gcc \
@@ -15,5 +18,7 @@ RUN apt-get update --fix-missing && \
     rm -rf /var/lib/apt/lists/*
 
 COPY . .
+
 EXPOSE 80
+
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
