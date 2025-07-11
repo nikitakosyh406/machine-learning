@@ -4,7 +4,8 @@ WORKDIR /app
 
 COPY requirements.txt .
 
-RUN apt-get update --fix-missing && \
+RUN pip install --upgrade pip
+    apt-get update --fix-missing && \
     apt-get install -y --no-install-recommends \
         gcc \
         python3-dev \
