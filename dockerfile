@@ -1,11 +1,10 @@
-FROM python:3.9-slim
+FROM python:3.12-slim
 
 WORKDIR /app
 
 COPY requirements.txt .
 
-RUN pip install --upgrade pip
-    apt-get update --fix-missing && \
+RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         gcc \
         python3-dev \
@@ -13,6 +12,7 @@ RUN pip install --upgrade pip
         libffi-dev \
         libxml2-dev \
         libxslt1-dev && \
+    pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r requirements.txt && \
     apt-get purge -y gcc python3-dev libssl-dev libffi-dev && \
     apt-get autoremove -y && \
